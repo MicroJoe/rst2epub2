@@ -302,9 +302,8 @@ class EpubBook:
 
     def add_toc_map_node(self, href, title, depth=None, parent=None):
         if not title:
-            import pdb
-
-            pdb.set_trace()
+            raise ValueError("Missing title. Did you forgot an header "
+                             "before the first paragraph?")
         print("TITLE", title)
         node = TocMapNode()
         node.href = href
